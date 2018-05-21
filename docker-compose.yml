@@ -1,14 +1,14 @@
-version: '3'
+version: '3.3'
 services:
   spark-master:
-    build: ./master
+    image: rxvc/spark:2.3.0-master
     container_name: spark-master
     ports:
       - 8080:8080
       - 7077:7077
       - 6066:6066
   spark-worker1:
-    build: ./worker
+    image: rxvc/spark:2.3.0-worker
     container_name: spark-worker1
     depends_on:
       - spark-master
@@ -18,7 +18,7 @@ services:
       - "SPARK_MASTER=spark://spark-master:7077"
       - "constraint:node==node1"
   spark-worker2:
-    build: ./worker
+    image: rxvc/spark:2.3.0-worker
     container_name: spark-worker2
     depends_on:
       - spark-master
@@ -26,4 +26,4 @@ services:
       - 8082:8081
     environment:
       - "SPARK_MASTER=spark://spark-master:7077"
-     - "constraint:node==node2"
+      - "constraint:node==node2"
