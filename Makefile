@@ -1,4 +1,4 @@
-qqqqqqqqrun:
+run:
 	@ docker-compose up -d && sleep 1
 	@ docker-compose exec jupyter jupyter notebook list
 
