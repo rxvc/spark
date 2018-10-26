@@ -1,4 +1,4 @@
-FROM rxvc/openjdk:8-jdk-alpine
+FROM rxvc/jdk:8-jdk-alpine
 
 MAINTAINER Rodrigo Vallejo <rxvallejoc@gmail.com>
 
@@ -6,7 +6,7 @@ ENV ENABLE_INIT_DAEMON true
 ENV INIT_DAEMON_BASE_URI http://identifier/init-daemon
 ENV INIT_DAEMON_STEP spark_master_init
 
-ENV SPARK_VERSION=2.3.0
+ENV SPARK_VERSION=2.3.2
 ENV HADOOP_VERSION=2.7
 
 RUN apk add --no-cache curl bash \

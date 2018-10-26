@@ -1,4 +1,4 @@
-FROM rxvc/spark:2.3.0-base
+FROM rxvc/spark:2.3.2-base
 
 MAINTAINER Rodrigo Vallejo <rxvallejoc@gmail.com>
 
